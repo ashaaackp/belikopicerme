@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beli Kopi Cerme - Official Website</title>
+    <!-- Memanggil Font Awesome untuk Logo Sosmed & Ikon Biodata -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- GOOGLE FONTS: Inter (Modern & Tegas) & Plus Jakarta Sans (Minimalis & Rapi) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: #FAFAFA; /* Putih Bersih */
+            color: #3E2723; /* Cokelat Espresso */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+            padding: 40px 0 60px 0;
+        }
+
+        /* --- CONTAINER UTAMA --- */
+        .main-container {
+            max-width: 850px;
+            width: 100%;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            padding: 0 15px;
+        }
+
+        /* Desain Umum Setiap Section */
+        .cafe-section {
+            background: #FFFFFF;
+            padding: 45px 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(62, 39, 35, 0.04);
+            border: 1px solid rgba(62, 39, 35, 0.05);
+            text-align: center;
+        }
+
+        /* --- PROFILE HERO (HEADER) --- */
+        .profile-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .brand-avatar-wrapper {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #FFF;
+            box-shadow: 0 8px 20px rgba(62, 39, 35, 0.1);
+            margin-bottom: 20px;
+            background: #FFF;
+        }
+
+        .brand-avatar-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        header h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 6px;
+            color: #1A0F0D;
+        }
+
+        header .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #795548;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        /* --- STYLE BUBBLE TEXT --- */
+        .story-bubble-container {
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto 10px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .story-bubble {
+            background: #FAF8F7; /* Warna creme lembut */
+            border: 1px solid rgba(62, 39, 35, 0.06);
+            border-radius: 16px;
+            padding: 20px 24px;
+            font-size: 1.05rem;
+            color: #4E342E;
+            line-height: 1.7;
+            text-align: justify;
+            font-weight: 400;
+        }
+
+        .story-bubble strong {
+            color: #1A0F0D;
+            font-weight: 700;
+        }
+
+        /* Judul Setiap Section Konten */
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1A0F0D;
+            letter-spacing: -0.5px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-transform: uppercase;
+        }
+
+        .section-title::before, .section-title::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: #E0D7D5;
+            max-width: 40px;
+        }
+
+        /* Sub-judul Gallery & Menu */
+        h3.gallery-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: left;
+            margin: 25px 0 15px 0;
+            color: #3E2723;
+            border-left: 4px solid #795548;
+            padding-left: 10px;
+        }
+
+        /* --- STYLE: LOCATION SECTION --- */
+        .map-container-box {
+            background: #FFF;
+            padding: 15px;
+            border-radius: 16px;
+            border: 1px solid rgba(62, 39, 35, 0.08);
+            box-shadow: 0 4px 15px rgba(62, 39, 35, 0.02);
+            margin-bottom: 20px;
+        }
+
+        .map-wrapper {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .map-wrapper iframe {
+            width: 100%;
+            height: 350px;
+            display: block;
+        }
+
+        .social-title-box {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 25px 0 15px 0;
+            color: #3E2723;
+            text-align: center;
+        }
+        
+        /* Grid navigasi link */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        
+        .btn-link {
+            text-decoration: none;
+            color: #3E2723;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 12px;
+            border: 1.5px solid #3E2723;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-link:hover {
+            background-color: #3E2723;
+            color: #FAFAFA;
+        }
+
+        /* --- STYLE: GALLERY SECTION --- */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 12px;
+        }
+        .photo-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            aspect-ratio: 1 / 1;
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .photo-item:hover img { transform: scale(1.05); }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+        }
+        .video-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .video-item video { width: 100%; display: block; }
+
+        /* --- STYLE: MENU SECTION --- */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px 30px;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 6px;
+            border-bottom: 1px dashed rgba(62, 39, 35, 0.15);
+        }
+        .menu-item span {
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: #4E342E;
+        }
+        .item-price {
+            font-weight: 700;
+            color: #FFFFFF;
+            font-size: 1.05rem;
+            padding-left: 5px;
+        }
+
+        /* --- STYLE: PROFILE SECTION --- */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .profile-card {
+            background: #FFF;
+            border-radius: 16px;
+            padding: 25px 20px;
+            border: 1px solid rgba(62, 39, 35, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .avatar-wrapper {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #FFF;
+            box-shadow: 0 4px 12px rgba(62, 39, 35, 0.1);
+            margin-bottom: 15px;
+        }
+        .avatar-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .bio-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+            color: #1A0F0D;
+        }
+        .bio-details {
+            text-align: left; width: 100%; font-size: 0.95rem;
+            display: flex; flex-direction: column; gap: 8px;
+            border-top: 1px dashed rgba(62, 39, 35, 0.15); padding-top: 12px;
+            color: #5D4037;
+        }
+        .bio-item { display: flex; gap: 8px; line-height: 1.4; }
+        .bio-item i { color: #795548; margin-top: 3px; width: 14px; text-align: center; }
+
+        /* Container & Teks Label Khusus Partner di atas tombol */
+        .partner-section-box {
+            margin-top: 15px;
+            padding-top: 25px;
+            border-top: 1px dashed rgba(62, 39, 35, 0.15);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .partner-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #3E2723;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .partner-btn-container {
+            width: 100%;
+            max-width: 200px; /* Ukuran pas untuk tombol tunggal Gemini AI */
+        }
+
+        /* --- ANIMASI BACKGROUND EMOJI --- */
+        .floating-emojis {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 1;
+        }
+        .emoji {
+            position: absolute; font-size: 22px; opacity: 0.08;
+            animation: floatUp 15s linear infinite; bottom: -50px;
+        }
+        .emoji:nth-child(1) { left: 6%; animation-duration: 14s; }
+        .emoji:nth-child(2) { left: 24%; animation-duration: 18s; animation-delay: 3s; }
+        .emoji:nth-child(3) { left: 52%; animation-duration: 16s; animation-delay: 1s; }
+        .emoji:nth-child(4) { left: 74%; animation-duration: 15s; animation-delay: 5s; }
+        .emoji:nth-child(5) { left: 90%; animation-duration: 19s; animation-delay: 2s; }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.12; }
+            90% { opacity: 0.12; }
+            100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animasi Latar Belakang -->
+    <div class="floating-emojis">
+        <span class="emoji">☕</span>
+        <span class="emoji">🍞</span>
+        <span class="emoji">☕</span>
+        <span class="emoji">✨</span>
+        <span class="emoji">🍞</span>
+    </div>
+
+    <div class="main-container">
+
+        <!-- ================= HEADER SECTION & STORY ================= -->
+        <header class="cafe-section profile-hero">
+            <div class="brand-avatar-wrapper">
+                <img src="belikopi.jpeg" alt="Beli Kopi Logo">
+            </div>
+            <h1>Beli Kopi</h1>
+            <div class="subtitle">Cerme, Gresik</div>
+            
+            <div class="story-bubble-container">
+                <div class="story-bubble">
+                    <strong>belikopi.</strong> pertama kali didirikan dan membuka gerai perdananya (outlet pertama) pada akhir tahun 2019 di wilayah Jawa Timur. Brand lokal ini memulai perjalanan bisnis kafenya dengan konsep <em>grab-and-go</em> yang berfokus menyajikan racikan kopi menggunakan biji kopi asli Nusantara. CEO dan founder dari jaringan kedai kopi lokal Belikopi (atau belikopibarukamu) di Indonesia adalah <strong>Fariz Julinar Maurisal</strong>. Beliau juga dikenal sebagai pendiri bisnis bakery lokal, yaitu Lyly Bakery. Di bawah kepemimpinannya, jaringan Belikopi telah berekspansi secara masif dengan membuka berbagai cabang di berbagai kota.
+                </div>
+                
+                <div class="story-bubble">
+                    <strong>belikopibarukamu</strong> adalah jaringan kedai kopi dan waralaba lokal Indonesia yang dikenal dengan harga terjangkau dan penggunaan biji kopi asli Indonesia. Merek ini beroperasi di hampir 100 gerai di seluruh negeri dan sering menghadirkan promo menarik. Menyajikan kopi lokal kopi dan juga tersedia menu roti panggang (ropang) untuk menemani waktu ngopi.
+                </div>
+                
+                <div class="story-bubble">
+                    Anda bisa menikmati layanan pesan-antar melalui aplikasi GrabFood, GoFood, atau ShopeeFood. Promo reguler sering diadakan di gerai (seperti Buy 1 Get 1) dan diskon tambahan bila memakai pembayaran digital. Beli kopi kekinian dengan lokasi terdekat di Gresik bisa dilakukan dengan mudah, baik dengan mengunjungi langsung gerai lokal seperti belikopi maupun melalui aplikasi pesan antar.
+                </div>
+                
+                <div class="story-bubble">
+                    Gerai <strong>belikopi. Cerme</strong> yang berlokasi di Jalan Pasar Cerme Lor No.38 (Kecamatan Cerme, Gresik) sudah resmi dibuka. Masa grand opening dan promo awal untuk cabang ini telah berlangsung pada 16 September 2022 lalu.
+                </div>
+            </div>
+        </header>
+
+        <!-- ================= LOCATION SECTION ================= -->
+        <section class="cafe-section">
+            <h2 class="section-title">Location & Contact</h2>
+            <div class="map-container-box">
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.110291290684!2d112.56327867411149!3d-7.228259470981252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78016ddc8e2397%3A0x9d7a95e3f12b067!2sBelikopi.%20-%20Cerme!5e0!3m2!1sid!2sid!4v1781742019319!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <h3 class="social-title-box">Order & Social Media</h3>
+            <div class="links-grid">
+                <a href="https://www.instagram.com/belikopibarukamu?igsh=ZWZud3h6cTFhczIy" target="_blank" class="btn-link"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@belikopicerme1?_r=1&_t=ZS-97C6w6kWO4T" target="_blank" class="btn-link"><i class="fab fa-tiktok"></i> Tiktok</a>
+                <a href="https://gofood.co.id/surabaya/restaurant/belikopi-cerme-f0d6a735-364e-4996-ac43-e28b0826a26d?as=gmaps" target="_blank" class="btn-link"><i class="fas fa-motorcycle"></i> GoFood</a>
+                <a href="https://shopee.co.id/universal-link/now-food/shop/20766743?deep_and_deferred=1&shareChannel=copy_link" target="_blank" class="btn-link"><i class="fas fa-shopping-bag"></i> ShopeeFood</a>
+            </div>
+        </section>
+
+        <!-- ================= GALLERY SECTION ================= -->
+        <section class="cafe-section">
+            <h2 class="section-title">Our Gallery</h2>
+            
+            <h3 class="gallery-subtitle">Photos</h3>
+            <div class="photo-grid">
+                <div class="photo-item"><img src="baliho.jpeg" alt="Baliho Promo"></div>
+                <div class="photo-item"><img src="belkop.jpeg" alt="Suasana Store"></div>
+                <div class="photo-item"><img src="kopi.jpeg" alt="Produk Kopi"></div>
+                <div class="photo-item"><img src="depan.jpeg" alt="Tampak Depan"></div>
+            </div>
+
+            <h3 class="gallery-subtitle">Videos</h3>
+            <div class="video-grid">
+                <div class="video-item"><video src="roomtour.mp4" controls></video></div>
+                <div class="video-item"><video src="sek.mp4" controls></video></div>
+            </div>
+        </section>
+
+        <!-- ================= MENU SECTION ================= -->
+        <section class="cafe-section">
+            <h2 class="section-title">Menu List</h2>
+            
+            <h3 class="gallery-subtitle">Drinks Selection</h3>
+            <div class="menu-grid">
+                <div class="menu-item"><span>Kopi Susu Gula Aren</span><span class="item-price">11K</span></div>
+                <div class="menu-item"><span>Kopi Hitam</span><span class="item-price">8K</span></div>
+                <div class="menu-item"><span>Kopi Susu Bandung</span><span class="item-price">11K</span></div>
+                <div class="menu-item"><span>Kopi Susu Nusantara</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Kopi Chocolate</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Kopi Avocado</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Americano</span><span class="item-price">8K</span></div>
+                <div class="menu-item"><span>Cappucino</span><span class="item-price">11K</span></div>
+                <div class="menu-item"><span>Vanilla Latte</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Caramel Machiato</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Hazelnut Latte</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Spanish Latte</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Kopi Jelly Gula Aren</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Berry Cold Brew</span><span class="item-price">11K</span></div>
+                <div class="menu-item"><span>Kopi Milo</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Milo Boba</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Milo Machiato</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Hojicha Latte</span><span class="item-price">11K</span></div>
+                <div class="menu-item"><span>Sea Salt Latte</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Chocolate</span><span class="item-price">11K</span></div>
+                <div class="menu-item"><span>Caramel Susu</span><span class="item-price">11K</span></div>
+                <div class="menu-item"><span>Cheese Milk Tea</span><span class="item-price">11K</span></div>
+                <div class="menu-item"><span>Cookies & Cream</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Avocado</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Matcha</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Matcha Peach</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Chocolate Pistachio</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Petik Mangga</span><span class="item-price">13K</span></div>
+                <div class="menu-item"><span>Strawberry</span><span class="item-price">11K</span></div>
+            </div>
+
+            <h3 class="gallery-subtitle">Toast (Ropang) Selection</h3>
+            <div class="menu-grid">
+                <div class="menu-item"><span>Ropang Original</span><span class="item-price">7K</span></div>
+                <div class="menu-item"><span>Ropang Chocolate</span><span class="item-price">8K</span></div>
+                <div class="menu-item"><span>Ropang Noughat</span><span class="item-price">8K</span></div>
+                <div class="menu-item"><span>Ropang Cheese</span><span class="item-price">8K</span></div>
+                <div class="menu-item"><span>Ropang Sarikaya</span><span class="item-price">8K</span></div>
+                <div class="menu-item"><span>Ropang Nastar</span><span class="item-price">8K</span></div>
+                <div class="menu-item"><span>Ropang Oreo</span><span class="item-price">10K</span></div>
+                <div class="menu-item"><span>Ropang Ham & Cheese</span><span class="item-price">10K</span></div>
+                <div class="menu-item"><span>Ropang Milo</span><span class="item-price">10K</span></div>
+                <div class="menu-item"><span>Ropang Regal</span><span class="item-price">10K</span></div>
+                <div class="menu-item"><span>Ropang Chick & Cheese</span><span class="item-price">11K</span></div>
+                <div class="menu-item"><span>Ropang Boba</span><span class="item-price">11K</span></div>
+                <div class="menu-item"><span>Ropang Pepperoni Cheese</span><span class="item-price">12K</span></div>
+                <div class="menu-item"><span>Ropang Beef Truffle Chitato</span><span class="item-price">13K</span></div>
+            </div>
+        </section>
+
+        <!-- ================= EDITOR PROFILE SECTION ================= -->
+        <section class="cafe-section">
+            <h2 class="section-title">Editor Profile</h2>
+            <div class="profile-grid">
+                
+                <!-- Rahmalia -->
+                <div class="profile-card">
+                    <div class="avatar-wrapper">
+                        <img src="asaamaniez.jpeg" alt="Foto Rahmalia">
+                    </div>
+                    <div class="bio-name">Rahmalia Siti Maryam Assafa</div>
+                    <div class="bio-details">
+                        <div class="bio-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Gresik, 11 November 2010</span>
+                        </div>
+                        <div class="bio-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Dsn. Kedung Banteng, Ds. Gredek, Kec. Duduk Sampeyan, Kab. Gresik</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aurellia -->
+                <div class="profile-card">
+                    <div class="avatar-wrapper">
+                        <img src="aurelgemoy.jpeg" alt="Foto Aurellia">
+                    </div>
+                    <div class="bio-name">Zahiroh Raihanah Aurellia</div>
+                    <div class="bio-details">
+                        <div class="bio-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Gresik, 9 Februari 2010</span>
+                        </div>
+                        <div class="bio-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ds. Wedani, Kec. Cerme, Kab. Gresik</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bagian Partner yang Diperbarui -->
+            <div class="partner-section-box">
+                <div class="partner-label">Designer Partner:</div>
+                <div class="partner-btn-container">
+                    <a href="https://gemini.google.com" target="_blank" class="btn-link">
+                        <i class="fas fa-robot"></i> Gemini AI
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
